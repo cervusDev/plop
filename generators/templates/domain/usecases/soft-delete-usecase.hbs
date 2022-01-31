@@ -1,0 +1,27 @@
+import {Inject, Injectable, BadRequestException} from '@nestjs/common';
+import { UseCase } from 'src/domain/base/use-case';
+import {{pascalCase name}} from '../entities/{{dashcase name}}.entity';
+import I{{pascalCase name}}Repository from '../repository/{{dashcase name}}.repository';
+import { PROVIDER } from '../constants/provider';
+
+@Injectable()
+export class SoftDelete{{pascalCase name}}UseCase implements UseCase<number, void> {
+    constructor (
+        @Inject(PROVIDER.REPOSITORY)
+        private readonly {{dashcase name}}Repository: I{{pascalCase name}}Repository,
+    ) {}
+
+    public async execute(input: number): Promise<void> {
+        const {{dashcase name}} = await this.{{dashcase name}}Repository.getById(input);
+
+        if ({{dashcase name}}) {
+            const { deletedAt } = await this.{{dashcase name}}Repository.update(input, {
+                deletedAt: new Date(),
+            } as {{pascalCase name}});
+
+            if (deletedAt === null) {
+                throw new BadRequestException('Não foi possível excluir o registro');
+            }
+        }
+    }
+}

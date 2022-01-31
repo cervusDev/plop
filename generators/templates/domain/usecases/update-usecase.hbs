@@ -1,0 +1,22 @@
+import {Inject, Injectable} from '@nestjs/common';
+import {{pascalCase name}} from '../entities/{{dashcase name}}.entity';
+import {UseCase} from 'domain/base/use-case';
+import {PROVIDER} from '../constants/provider';
+
+interface Update{{pascalCase name}} {
+    {{dashcase name}}:{{pascalCase name}};
+}
+
+@Injectable()
+export class Update{{pascalCase name}}Usecase implements UseCase<Update{{pascalCase name}}, {{pascalCase name}} > {
+    constructor (
+        @Inject(PROVIDER.REPOSITORY)
+        private readonly {{dashcase name}}Repository: I{{pascalCase name}}Repository,
+    ) {}    
+
+    public async execute(input: Update{{pascalCase name}}): Promise<{{pascalCase name}}> {
+        return this.{{dashcase name}}Repository.update(input.id, {
+            ...input. {{dashcase name}}
+        });
+    }
+}
