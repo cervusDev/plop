@@ -1,0 +1,5 @@
+import { {{pascalCase name}} } from 'domain/{{dashcase name}}/entities/{{dashcase name}}.entity';
+import { I{{pascalCase name}}Repository } from 'domain/{{dashcase name}}/repository/{{dashcase name}}.repository';
+import { InMemoryRepository } from './inmemory.repository';
+
+export class {{pascalCase name}}InmemmoryRepository extends InMemoryRepository<{{pascalCase name}}> implements I{{pascalCase name}}Repository {}

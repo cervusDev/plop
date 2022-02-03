@@ -1,3 +1,0 @@
-export const PROVIDER = {
-    REPOSITORY: 'USUARIOREPOSITORY'
-}
