@@ -1,0 +1,7 @@
+
+import { {{pascalCase name}} } from 'domain/{{dashcase name}}/entities/{{dashcase name}}.entity';
+import { Mapper } from 'presentation/base/mapper';
+import { Update{{pascalCase name}}Dto } from '../dto/update-{{dashcase name}}.dto';
+
+
+export class Update{{pascalCase name}}Mapper implements Mapper<Update{{pascalCase name}}Dto, {{pascalCase name}}Entity> {}

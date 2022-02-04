@@ -22,6 +22,7 @@ module.exports = function (plop) {
         type: 'add',
         path: '../src/infra/database/prisma/repositories/{{dashcase name}}.ts',
         templateFile: 'templates/infra/prisma.repository.hbs',
+        skipIfExists: true,
       },
     ],
   });

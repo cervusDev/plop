@@ -1,0 +1,13 @@
+import { Module } from '@nestjs/common';
+
+@Module({
+    controllers: [{{pascalCase name}}Controller],
+    providers: [
+        Create{{pascalCase name}}Usecase,
+        Update{{pascalCase name}}Usecase,
+        Delete{{pascalCase name}}Usecase,
+        Find{{pascalCase name}}Usecase,
+    ],
+})
+
+export class {{pascalCase name}}Module {}
