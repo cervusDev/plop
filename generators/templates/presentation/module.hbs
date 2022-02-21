@@ -1,13 +1,39 @@
-import { Module } from '@nestjs/common';
-
 @Module({
-    controllers: [{{pascalCase name}}Controller],
+    controllers: [
+    /* insira o controller aqui... */
+    {{#if create}}
+        Create{{pascalCase name}}Controller,
+    {{/if}}
+    {{#if readAll}}
+        FindAll{{pascalCase name}}Controller,
+    {{/if}}
+    {{#if read}}
+        FindOne{{pascalCase name}}Controller,
+    {{/if}}
+    {{#if update}}
+        Update{{pascalCase name}}Controller,
+    {{/if}}
+    {{#if delete}}
+        Delete{{pascalCase name}}Controller,
+    {{/if}}
+    ],
     providers: [
+    /* insira os usecase aqui... */
+    {{#if create}}
         Create{{pascalCase name}}Usecase,
+    {{/if}}
+    {{#if readAll}}
+        FindAll{{pascalCase name}}Usecase,
+    {{/if}}
+    {{#if read}}
+        FindOne{{pascalCase name}}Usecase,
+    {{/if}}
+    {{#if update}}
         Update{{pascalCase name}}Usecase,
+    {{/if}}
+    {{#if delete}}
         Delete{{pascalCase name}}Usecase,
-        Find{{pascalCase name}}Usecase,
+    {{/if}}
     ],
 })
-
 export class {{pascalCase name}}Module {}

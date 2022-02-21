@@ -1,3 +1,10 @@
 export const PROVIDER = {
-    REPOSITORY: '{{loud name}}REPOSITORY'
+    {{#if subProviderName}}
+    {{loud name}}REPOSITORY: '{{pascalCase name}}Repository'
+    {{else}}
+    REPOSITORY: '{{pascalCase name}}Repository'
+    {{/if}}
+    {{#if subProviderName}}
+    {{loud subProviderName}}REPOSITORY: '{{pascalCase subProviderName}}Repository'
+    {{/if}}
 }

@@ -1,13 +1,8 @@
-import {Inject, Injectable} from '@nestjs/common';
-import Blob from '../entities/blob.entity';
-import {UseCase} from 'domain/base/use-case';
-import CreateBlobDto from '../dtos/create-blob.dto';
-import {PROVIDER} from '../constants/provider'
 
 @Injectable()
-export class CreateBlobUsecase implements UseCase<CreateBlobDto, Blob>{
+export class CreateBlobUsecase implements UseCase<Blob>{
     constructor (
-        @Inject(PROVIDER.REPOSITORY)
+        @Inject()
         private readonly blobRepository: IBlobRepository,
     ) {}
 

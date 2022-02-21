@@ -1,9 +1,3 @@
-import {Inject, Injectable, BadRequestException} from '@nestjs/common';
-import { UseCase } from 'src/domain/base/use-case';
-import Blob from '../entities/blob.entity';
-import IBlobRepository from '../repository/blob.repository';
-import { PROVIDER } from '../constants/provider';
-
 @Injectable()
 export class SoftDeleteBlobUseCase implements UseCase<number, void> {
     constructor (

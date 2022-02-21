@@ -1,9 +1,0 @@
-import { Provider } from '@nestjs/common';
-import { PROVIDER } from 'domain/{{dashcase name}}/constants/provider';
-import { {{pascalCase name}}PrismaRepository } from 'infra/database/prisma/repositories/{{dashcase name}}.repository';
-import { {{pascalCase name}}PrismaRepository } from 'infra/database/prisma/repositories/{{dashcase name}}.repository';
-
-export const {{pascalCase name}}Repository: Provider = {
-  provide: PROVIDER.{{loud name}}REPOSITORY,
-  useClass: {{pascalCase name}}PrismaRepository,
-};

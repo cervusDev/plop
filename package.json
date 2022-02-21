@@ -17,6 +17,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "domain": "plop --plopfile ./generators/domain.plop.js",
+    "usecase": "plop --plopfile ./generators/usecase.plop.js",
     "infra": "plop --plopfile ./generators/infra.plop.js",
     "presenter": "plop --plopfile ./generators/presenter.plop.js",
     "shared": "plop --plopfile ./generators/shared.plop.js",
@@ -29,6 +30,7 @@
     "@nestjs/common": "^8.0.0",
     "@nestjs/core": "^8.0.0",
     "@nestjs/platform-express": "^8.0.0",
+    "inquirer": "^8.2.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0"

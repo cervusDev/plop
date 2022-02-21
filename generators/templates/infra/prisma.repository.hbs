@@ -1,8 +1,3 @@
-import { Injectable } from '@nestjs/common';
-import { {{pascalCase name}} } from 'domain/{{dashcase name}}/entities/{{dashcase name}}.entity';
-import { I{{pascalCase name}}Repository } from 'domain/{{dashcase name}}/repository/{{dashcase name}}.repository';
-import { PrismaService } from '../prisma.service';
-
 @Injectable()
 export class {{pascalCase name}}PrismaRepository implements I{{pascalCase name}}Repository{
     constructor(private readonly prisma: PrismaService) {}

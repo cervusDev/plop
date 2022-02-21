@@ -1,13 +1,23 @@
-import {Inject, Injectable} from '@nestjs/common';
-import {{pascalCase name}} from '../entities/{{dashcase name}}.entity';
-import {UseCase} from 'domain/base/use-case';
-import Create{{pascalCase name}}Dto from '../dtos/create-{{dashcase name}}.dto';
-import {PROVIDER} from '../constants/provider'
 
+{{#if subProviderName}}
 @Injectable()
-export class Create{{pascalCase name}}Usecase implements UseCase<Create{{pascalCase name}}Dto, {{pascalCase name}}>{
+export class Create{{pascalCase name}}Usecase implements UseCase<{{pascalCase name}}>{
     constructor (
-        @Inject(PROVIDER.REPOSITORY)
+        @Inject()
+        private readonly {{dashcase name}}Repository: I{{pascalCase name}}Repository,
+        @Inject()
+        private readonly {{subProviderName}}Repository: I{{pascalCase subProviderName}}Repository
+    ) {}
+
+    public async execute(input: Create{{pascalCase name}}Dto): Promise<{{pascalCase name}}> {
+        return this.{{dashcase name}}Repository.create(input);
+    }
+}
+{{else}}
+@Injectable()
+export class Create{{pascalCase name}}Usecase implements UseCase<{{pascalCase name}}>{
+    constructor (
+        @Inject()
         private readonly {{dashcase name}}Repository: I{{pascalCase name}}Repository,
     ) {}
 
@@ -15,3 +25,4 @@ export class Create{{pascalCase name}}Usecase implements UseCase<Create{{pascalC
         return this.{{dashcase name}}Repository.create(input);
     }
 }
+{{/if}} 

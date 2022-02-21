@@ -1,9 +1,3 @@
-import {Inject, Injectable} from '@nestjs/common';
-import { UseCase } from 'src/domain/base/use-case';
-import {{pascalCase name}} from '../entities/{{dashcase name}}.entity';
-import I{{pascalCase name}}Repository from '../repository/{{dashcase name}}.repository';
-import { PROVIDER } from '../constants/provider';
-
 @Injectable()
 export class FindAll{{pascalCase name}} implements UseCase<number, {{pascalCase name}}[]> {
     constructor (

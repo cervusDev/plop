@@ -1,0 +1,1 @@
+export class CreateBlobMapper implements Mapper<CreateBlobDto, BlobEntity> {}
